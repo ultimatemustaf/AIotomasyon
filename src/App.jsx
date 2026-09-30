@@ -3,7 +3,7 @@ import { RevealSection } from './hooks/useReveal';
 function MinimalHeader() {
   return (
     <header className="py-6 bg-transparent">
-      <div className="container-custom flex items-center justify-center">
+      <div className="container-custom flex items-center justify-between">
         <a href="#" className="group flex items-center gap-1 no-underline" aria-label="Otorandevum Ana Sayfa">
           <span className="font-serif text-2xl font-medium text-charcoal tracking-tight">
             oto.
@@ -12,6 +12,15 @@ function MinimalHeader() {
             randevum
           </span>
         </a>
+        
+        {/* Live Badge */}
+        <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-500/20">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          7/24 Kesintisiz Sistem
+        </div>
       </div>
     </header>
   );
@@ -34,39 +43,20 @@ export default function App() {
     <div className="min-h-screen bg-[#F9F8F6] flex flex-col font-sans">
       <MinimalHeader />
       
-      <main className="flex-grow pt-12 pb-16 flex items-center justify-center">
-        <div className="container-custom w-full max-w-3xl flex flex-col items-center">
+      <main className="flex-grow pt-8 pb-16 flex items-center justify-center">
+        <div className="container-custom w-full max-w-4xl flex flex-col items-center">
           
-          {/* Title Section */}
-          <div className="w-full text-center mb-12">
+          {/* Badge / Small Pill Section */}
+          <div className="w-full text-center mb-8">
             <RevealSection>
-              <div className="inline-flex items-center gap-2 border border-border bg-white/80 backdrop-blur-sm text-charcoal text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 shadow-sm">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  <path d="M2 17l10 5 10-5"/>
-                  <path d="M2 12l10 5 10-5"/>
-                </svg>
-                Güzellik Salonlarına Özel
+              <div className="inline-flex items-center gap-2 border border-border bg-white/80 backdrop-blur-sm text-charcoal text-xs md:text-sm font-semibold tracking-wide px-5 py-2.5 rounded-full shadow-sm">
+                SONRAKİ AŞAMA: 4 DAKİKALIK SUNUMU İZLEYİN VE RANDEVUNUZU OLUŞTURUN
               </div>
-            </RevealSection>
-            
-            <RevealSection delay={1}>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.2] tracking-tight text-charcoal mb-5 text-balance">
-                Salonunuzu Büyütmek İçin{' '}
-                <span className="italic text-accent">İnsan Hatalarına</span>{' '}
-                Son Verin.
-              </h1>
-            </RevealSection>
-            
-            <RevealSection delay={2}>
-              <p className="text-base md:text-lg text-muted max-w-2xl mx-auto leading-[1.6] font-light">
-                7/24 randevu alan, DM'lere yanıt veren ve no-show'ları sıfıra indiren yapay zekâ altyapısı. Aşağıdan sunumu izleyin ve görüşmenizi planlayın.
-              </p>
             </RevealSection>
           </div>
 
           {/* YouTube VSL Section */}
-          <RevealSection delay={3} className="w-full mb-16">
+          <RevealSection delay={1} className="w-full mb-12">
             <div className="w-full bg-white rounded-2xl overflow-hidden border border-border shadow-2xl shadow-charcoal/5">
               <div className="relative w-full aspect-video">
                 <iframe 
@@ -83,7 +73,7 @@ export default function App() {
           </RevealSection>
           
           {/* Calendly Widget Section */}
-          <RevealSection delay={4} className="w-full">
+          <RevealSection delay={2} className="w-full">
             <div className="w-full bg-white rounded-2xl overflow-hidden border border-border shadow-2xl shadow-charcoal/5 min-h-[700px]">
               <iframe 
                 src="https://calendly.com/fkonur2/check-up-gorusmesi?hide_landing_page_details=1&hide_gdpr_banner=1"
